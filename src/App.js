@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import './App.css';
 import HookListUseRef from "./examples/useRef";
+import HookUseMemoEx from "./useMemo";
 
 function App() {
   const [visibleList, setVisibleList] = useState(true);
@@ -16,6 +17,10 @@ function App() {
     <div className="App">
       { visibleList && <HookListUseRef visibleList={visibleList}/>}
       <button onClick={toggleList}>toggle</button>
+
+      <hr/>
+
+      <HookUseMemoEx/>
     </div>
   );
 }
