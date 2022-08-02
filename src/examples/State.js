@@ -5,8 +5,7 @@ function UseStateExample() {
     const [numbers, setNumbers] = useState([1, 2, 3]);
 
     const addNumber = () => {
-        const randomNumber = numbers[(numbers.length - 1)];
-        setNumbers([...numbers, randomNumber+1]);
+        setNumbers([...numbers, numbers.length]);
     }
 
     return (
