@@ -4,7 +4,8 @@ import { useState } from 'react';
 
 import './App.css';
 import HookListUseRef from "./examples/useRef";
-import HookUseMemoEx from "./useMemo";
+import SimpleContent from "./useCallback/counter";
+// import HookUseMemoEx from "./useMemo";
 
 function App() {
   const [visibleList, setVisibleList] = useState(true);
@@ -20,7 +21,9 @@ function App() {
 
       <hr/>
 
-      <HookUseMemoEx/>
+      {/*<HookUseMemoEx/>*/}
+
+      <SimpleContent/>
     </div>
   );
 }
