@@ -42,4 +42,5 @@ class ClassList extends React.Component {
   }
 }
 
-export default ClassList;
+export default ClassList
+;

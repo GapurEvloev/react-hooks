@@ -43,10 +43,15 @@ ul {
   padding: 0;
   margin: 0 auto 1em;
   list-style-type: none;
-  text-align: left
+  text-align: left;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
 }
 
 li {
-  padding: 0.5em 0;
+  padding: 20px 10px;
   border-bottom: 1px solid #000;
 }
