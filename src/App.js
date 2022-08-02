@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import List from './examples/useEffect.jsx'
+// import ClassList from './examples/useEffectClass.jsx'
+import HookList from './examples/State'
 
 import './App.css';
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      { visibleList && <List/>}
+      { visibleList && <HookList visibleList={visibleList}/>}
       <button onClick={toggleList}>toggle</button>
     </div>
   );
