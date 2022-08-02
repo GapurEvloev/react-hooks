@@ -1,38 +1,34 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 
 function HookListUseRef() {
+
   const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
-  const ulRef = useRef();
+  const timerRef = useRef();
 
   const addNumber = () => {
-    setNumbers([...numbers, numbers.length + 1]);
+    setNumbers(prev => [...prev, prev.length + 1]);
   };
 
-  const handleScroll = () => console.log("scroll");
+  const start = () => {
+    timerRef.current = setInterval(addNumber, 1000)
+  };
 
-  useEffect(() => {
-    ulRef.current.addEventListener("scroll", handleScroll)
-  }, []);
-
-  useEffect(() => {
-    //
-  }, [numbers]);
-
-  const removeScroll = () => {
-    ulRef.current.removeEventListener("scroll", handleScroll);
+  const stop = () => {
+    console.log(timerRef)
+    clearInterval(timerRef.current);
   }
 
   return (
     <div>
-      <ul ref={ulRef}>
+      <ul>
         {
           numbers.map((num, i) =>
             <li key={i}>{num}</li>
           )
         }
       </ul>
-      <button onClick={addNumber}>Add num</button>
-      <button onClick={removeScroll}>Don't listen</button>
+      <button onClick={start}>Start</button>
+      <button onClick={stop}>Stop</button>
     </div>
   );
 }
